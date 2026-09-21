@@ -1,0 +1,383 @@
+/* 页面自定义入口。修改此文件，保存后刷新浏览器即可。
+   desktop = 桌面，mobile = 手机；越靠后的规则优先。 */
+:root {
+  /* 页面宽度与位置 */
+  --page-max-width: 1440px;                    /* 整页最大宽度 */
+  --page-gutter: clamp(24px, 4vw, 64px);       /* 两侧留白 */
+  --hero-top: 5px;                          /* 首屏上留白 */
+  --hero-bottom: 54px;                       /* 首屏下留白 */
+  --hero-gap: clamp(20px, 5vw, 80px);         /* 简介与照片间距 */
+  --hero-copy-width: 1.9fr;                   /* 首屏文字列占比 */
+  --hero-photo-width: 0.6fr;                    /* 首屏照片列占比 */
+  --portrait-height: 380px;                   /* 照片显示高度 */
+  --portrait-position: 50% 40%;               /* 照片裁切焦点：横向 纵向 */
+  --section-space: 70px;                     /* 主要板块上下留白 */
+  --story-gap: clamp(32px, 4vw, 64px);        /* 研究图与文字间距 */
+  --story-visual-share: 0.7fr;               /* 研究图示列占比 */
+  --story-text-share: 1.25fr;                 /* 研究正文列占比 */
+
+  /* 字体与字号 */
+  --font-body: Arial, Helvetica, sans-serif; /* 普通正文的字体；按从左到右的顺序寻找可用字体 */
+  --font-heading: Georgia, 'Times New Roman', serif; /* 标题的字体；Georgia 为当前衬线字体 */
+  --serif: var(--font-heading); /* 将旧基础样式中的衬线文字同步到上方标题字体 */
+  --font-brand: 18px; /* 左上角英文姓名字号 */
+  --font-brand-zh: 17px; /* 左上角中文姓名字号 */
+  --font-nav: 17px; /* Research / Publications / News / Contact 导航字号 */
+  --font-hero: clamp(38px, 5vw, 70px); /* 首屏 Small particles. Connected worlds. 大标题字号 */
+  --font-section: clamp(26px, 3.1vw, 40px); /* Research / Publications / News 板块大标题字号 */
+  --font-story-heading: 36px; /* 三个详细研究介绍的标题字号 */
+  --font-intro: 17px; /* 首屏 I am... 简介正文字号 */
+  --font-research-body: 18px; /* 三个详细研究介绍的正文字号 */
+  --font-biography: 16px; /* 展开 Read full biography 后的正文字号 */
+  --font-paper-title: 20px; /* 论文题目字号 */
+  --font-paper-authors: 16px; /* 论文完整作者列表字号 */
+  --font-paper-journal: 16px; /* 期刊名、卷期、页码字号 */
+  --font-news: 18px; /* News 正文字号 */
+  --font-eyebrow: 18px; /* 板块上方小标签字号，例如 03 / NEWS & ACADEMIC SERVICE */
+  --body-line-height: 1.6; /* 正文行距倍数；1.6 表示字号的 1.6 倍 */
+
+
+  /* 首屏按钮、超链接、照片旁的文字 */
+  --font-lead: 22px;                        /* 大标题下方 Exploring... 说明 */
+  --font-bio-toggle: 16px;                  /* Read full biography 按钮 */
+  --font-button: 18px;                      /* Explore my research 按钮 */
+  --button-padding-y: 14px;                 /* 按钮上下内边距，影响高度 */
+  --button-padding-x: 20px;                 /* 按钮左右内边距，影响宽度 */
+  --font-social: 16px;                      /* Google Scholar / ORCID / Texas A&M 超链接 */
+  --social-gap: 22px;                       /* 上述超链接之间的水平间距 */
+  --font-text-link: 16px;                   /* 研究区论文链接、View manuscript 等文字链接 */
+  --font-photo-note: 15px;                  /* 照片下方英文姓名及 Ph.D. */
+  --font-affiliation: 18px;                 /* Postdoctoral Research Associate */
+  --font-university: 22px;                  /* Texas A&M University */
+  --font-department: 16px;                  /* Department of Atmospheric Sciences */
+  --font-monogram: 15px;                    /* 左上角圆形 XM 标志 */
+  --font-preview: 3px;                     /* 最上方未发布提示条 */
+  --intro-max-width: 860px;                 /* 首屏简介文字的最大行宽 */
+  --lead-max-width: 760px;                  /* Exploring... 段落最大行宽 */
+  --portrait-offset-y: 0px;                 /* 照片区域上下微调；正数下移，负数上移 */
+  --portrait-offset-x: -40px;
+  --nav-gap: 30px;                          /* 四个导航项目的间距 */
+  --header-min-height: 64px;                /* 桌面导航栏最小高度；内容较多时允许自动增高 */
+  --header-padding-y: 8px;                 /* 导航栏上下内边距 */
+
+  /* 三列 Research journey 卡片 */
+  --font-research-card-title: 28px;          /* Phase state & multiphase chemistry 等标题 */
+  --font-research-card-body: 17px;           /* 三列卡片的正文 */
+  --font-research-card-tag: 13px;            /* PARTICLE EVOLUTION 等底部标签 */
+  --font-research-index: 18px;               /* 01 / 02 / 03 序号 */
+
+  /* Research overview 图片尺寸与上下间距 */
+  --overview-width: 100%;                   /* 图片占内容区宽度；例如 90% 会缩小并居中 */
+  --overview-max-width: none;               /* 最大宽度；例如 1200px，none 表示不另设上限 */
+  --overview-image-height: auto;            /* auto 保持原图比例；也可设为 600px */
+  --overview-top: 45px;                     /* 图片板块顶部留白 */
+  --overview-bottom: 20px;                  /* 图片板块底部留白 */
+  --font-overview-label: 17px;              /* RESEARCH OVERVIEW 标签 */
+  --font-overview-caption: 17px;            /* 图片下方一两行研究总结 */
+
+  /* 三个具体研究方向的小图和状态文字 */
+  --story-padding-y: 65px;                  /* 每个具体研究方向上下留白 */
+  --story-visual-height: 320px;             /* 左侧或右侧示意图区域最小高度 */
+  --font-visual-label: 13px;                /* 示意图顶部小标签 */
+  --font-visual-phase: 18px;                /* Solid / Semisolid / Liquid 等标注 */
+  --font-visual-caption: 15px;              /* 示意图下方说明 */
+  --font-instrument-tag: 16px;              /* HR-AMS / CIMS-Orbitrap 标签 */
+  --font-status: 15px;                      /* Ongoing research / not yet published 等状态 */
+  --font-schematic-note: 14px;              /* 研究图示说明小字 */
+
+  /* 论文区：统计、折叠栏和筛选工具 */
+  --font-publication-subtitle: 17px;        /* Full author lists... 说明 */
+  --font-stat-number: 40px;                 /* 22、2018 to 2026 等统计数字 */
+  --font-stat-label: 16px;                  /* Journal articles 等统计标签 */
+  --font-selected-label: 16px;             /* SELECTED PUBLICATIONS 小标题 */
+  --font-paper-year: 17px;                 /* 每篇论文左侧年份 */
+  --font-paper-number: 14px;               /* 倒序编号 [22] 等 */
+  --font-publication-toggle: 27px;         /* Manuscripts under review / Complete publication list */
+  --font-publication-toggle-count: 16px;   /* 折叠栏右侧文章总数 */
+  --font-under-review: 17px;               /* 在审稿件正文 */
+  --font-under-review-status: 16px;        /* 在审稿件作者身份和提交日期 */
+  --font-filter: 16px;                     /* Search、Year、搜索框及筛选数量 */
+  --font-source-note: 14px;                /* Google Scholar、ORCID 来源说明 */
+
+  /* News 与页面底部 */
+  --font-news-date: 16px;                  /* News 左侧年月 */
+  --font-news-toggle: 18px;                /* View earlier news 折叠按钮 */
+  --news-date-width: 175px;                /* News 日期列宽度 */
+  --news-column-gap: 30px;                 /* 日期与正文之间的间距 */
+  --font-contact-title: clamp(38px, 4.3vw, 60px); /* Contact 大标题 */
+  --font-email: 28px;                      /* 邮箱链接 */
+  --font-address: 17px;                    /* 单位与地址 */
+  --font-footer: 14px;                     /* 页脚版权等文字 */
+
+  /* 主题颜色 */
+  --paper: #f7f8f2; /* 全页浅色背景 */
+  --ink: #193e36; /* 主要深色文字与深绿色板块背景 */
+  --green: #337e6d; /* 链接与强调文字颜色 */
+  --lake: #73b8a5; /* 湖绿色辅助色 */
+  --muted: #536b62; /* 次要说明文字颜色 */
+}
+
+body {font-family:var(--font-body)}
+.wrap {max-width:var(--page-max-width);padding-left:var(--page-gutter);padding-right:var(--page-gutter)}
+header {display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:20px;padding-left:var(--page-gutter);padding-right:var(--page-gutter)}
+.brand {grid-column:1;justify-self:start;font-size:var(--font-brand);font-family:var(--font-heading)}
+.brand-name>span {font-size:var(--font-brand-zh)}
+nav {grid-column:2;justify-self:center;justify-content:center;font-size:var(--font-nav);font-weight:700}
+.hero {grid-template-columns:minmax(0,var(--hero-copy-width)) minmax(0,var(--hero-photo-width));gap:var(--hero-gap);padding-top:var(--hero-top);padding-bottom:var(--hero-bottom)}
+.hero h1 {font-size:var(--font-hero);font-family:var(--font-heading)}
+.intro {font-size:var(--font-intro);max-width:800px;line-height:var(--body-line-height)}
+.lead {max-width:760px}
+.bio {font-size:var(--font-biography);line-height:var(--body-line-height)}
+.portrait-frame img {height:var(--portrait-height);object-position:var(--portrait-position)}
+.eyebrow,.hero .eyebrow,.story .eyebrow {font-size:var(--font-eyebrow)}
+.section-head h2 {font-size:var(--font-section);font-family:var(--font-heading)}
+.research,.publications,.news {padding-top:var(--section-space);padding-bottom:var(--section-space)}
+.story {grid-template-columns:minmax(0,var(--story-visual-share)) minmax(0,var(--story-text-share));gap:var(--story-gap)}
+.story.reverse {grid-template-columns:minmax(0,var(--story-text-share)) minmax(0,var(--story-visual-share))}
+.story h2 {font-size:var(--font-story-heading);font-family:var(--font-heading)}
+.story>div:last-child>p:not(.eyebrow) {font-size:var(--font-research-body);line-height:var(--body-line-height)}
+.paper h3 {font-size:var(--font-paper-title);font-family:var(--font-heading)}
+.authors {font-size:var(--font-paper-authors);line-height:var(--body-line-height)}
+.journal {font-size:var(--font-paper-journal)}
+.news-row p {font-size:var(--font-news);line-height:var(--body-line-height)}
+.news .section-head {grid-template-columns:1fr;gap:10px}
+.news .section-head .eyebrow {margin-bottom:8px}
+.news .section-head h2 {margin-bottom:10px}
+.earlier-news {border-top:1px solid #c4d2c6;margin-top:10px}
+.earlier-news>summary {display:flex;justify-content:space-between;gap:20px;padding:22px 0;font-size:18px;font-weight:700;list-style:none;color:var(--green)}
+.earlier-news>summary::after {content:'+'}
+.earlier-news[open]>summary::after {content:'⌃'}
+
+
+/* 以下规则把上方的变量应用到各部分。日常修改变量数值即可，不必改选择器。 */
+header {min-height:var(--header-min-height);padding-top:var(--header-padding-y);padding-bottom:var(--header-padding-y)}
+nav {gap:var(--nav-gap)}
+.monogram {font-size:var(--font-monogram)}
+.preview-bar {font-size:var(--font-preview)}
+.intro {max-width:var(--intro-max-width)}
+.lead {font-size:var(--font-lead);max-width:var(--lead-max-width)}
+.bio summary {font-size:var(--font-bio-toggle)}
+.button {font-size:var(--font-button);padding:var(--button-padding-y) var(--button-padding-x)}
+.social {font-size:var(--font-social);column-gap:var(--social-gap)}
+.text-link,.story .text-link {font-size:var(--font-text-link)}
+.photo-note {font-size:var(--font-photo-note)}
+.profile {position:relative;top:var(--portrait-offset-y);left:var(--portrait-offset-x)}
+.affiliation {font-size:var(--font-affiliation)}
+.affiliation strong {font-size:var(--font-university)}
+.affiliation small {font-size:var(--font-department)}
+.research-grid h3 {font-size:var(--font-research-card-title)}
+.research-grid p {font-size:var(--font-research-card-body)}
+.pill {font-size:var(--font-research-card-tag)}
+.index {font-size:var(--font-research-index)}
+/* 只改显示尺寸，不改变图片文件。contain 确保固定高度时不裁掉图片内容。 */
+.overview {padding-top:var(--overview-top);padding-bottom:var(--overview-bottom)}
+.overview figure {width:var(--overview-width);max-width:var(--overview-max-width);margin-inline:auto}
+#overview-image {width:100%;height:var(--overview-image-height);object-fit:contain;display:block}
+.overview-title .eyebrow {font-size:var(--font-overview-label)}
+.overview figcaption {font-size:var(--font-overview-caption)}
+.story {padding-top:var(--story-padding-y);padding-bottom:var(--story-padding-y)}
+.story-visual {min-height:var(--story-visual-height)}
+.micro-label {font-size:var(--font-visual-label)}
+.visual-labels {font-size:var(--font-visual-phase)}
+.story-visual p {font-size:var(--font-visual-caption)!important}
+.instrument-tags span {font-size:var(--font-instrument-tag)}
+.status {font-size:var(--font-status)}
+.schematic-note {font-size:var(--font-schematic-note)}
+.section-sub {font-size:var(--font-publication-subtitle)}
+.stats strong {font-size:var(--font-stat-number)}
+.stats span {font-size:var(--font-stat-label)}
+.list-label {font-size:var(--font-selected-label)}
+.paper .year {font-size:var(--font-paper-year)}
+.paper-number {font-size:var(--font-paper-number)}
+.complete>summary,.under-review>summary {font-size:var(--font-publication-toggle)}
+.complete>summary span,.under-review>summary span {font-size:var(--font-publication-toggle-count)}
+.under-review>p,.under-review li {font-size:var(--font-under-review)}
+.under-review li p {font-size:var(--font-under-review-status)}
+.publication-toolbar,.publication-toolbar input,.publication-toolbar select {font-size:var(--font-filter)}
+.source-note {font-size:var(--font-source-note)}
+.news-row {grid-template-columns:var(--news-date-width) minmax(0,1fr);gap:var(--news-column-gap)}
+.news-row time {font-size:var(--font-news-date)}
+.earlier-news>summary {font-size:var(--font-news-toggle)}
+.contact h2 {font-size:var(--font-contact-title)}
+.email {font-size:var(--font-email)}
+.contact-bottom p {font-size:var(--font-address)}
+footer {font-size:var(--font-footer)}
+
+/* 窗口较窄时，导航独立一行居中，避免与中英文姓名重叠。 */
+@media(max-width:1340px) {
+ :root {--header-min-height:0px; /* 双行导航不设额外最小高度，按内容自动计算 */}
+ header {grid-template-columns:1fr;gap:12px}
+ .brand {grid-row:1;grid-column:1}
+ nav {grid-row:2;grid-column:1;width:auto;justify-content:center}
+ html {scroll-padding-top:150px}
+}
+
+/* 手机独立字号。只改这里，不影响桌面。 */
+@media(max-width:700px) {
+ :root {
+
+  --font-lead: 23px;                   /* 手机首屏副标题 */
+  --font-button: 16px;                 /* 手机 Explore my research */
+  --font-social: 14px;                 /* 手机 ORCID 等超链接 */
+  --social-gap: 18px;                  /* 手机学术链接间距 */
+  --font-photo-note: 12px;             /* 手机照片下方姓名 */
+  --font-affiliation: 17px;            /* 手机职位 */
+  --font-university: 22px;             /* 手机大学名称 */
+  --font-department: 15px;             /* 手机系名 */
+  --font-monogram: 13px;               /* 手机 XM 标志 */
+  --font-preview: 11px;                /* 手机预览提示 */
+  --font-overview-label: 16px;         /* 手机总览标签 */
+  --font-overview-caption: 16px;       /* 手机图片说明 */
+  --overview-top: 35px;                /* 手机总览上间距 */
+  --overview-image-height: auto;       /* 手机图片按比例自适应 */
+  --story-padding-y: 38px;             /* 手机研究板块间距 */
+  --story-visual-height: 285px;        /* 手机研究示意图最小高度 */
+  --font-visual-label: 12px;           /* 手机示意图顶部标签 */
+  --font-visual-phase: 16px;           /* 手机相态文字 */
+  --font-visual-caption: 14px;         /* 手机示意图说明 */
+  --font-instrument-tag: 15px;         /* 手机仪器标签 */
+  --font-status: 14px;                 /* 手机研究状态 */
+  --font-schematic-note: 13px;         /* 手机图示说明 */
+  --font-publication-subtitle: 16px;   /* 手机论文区说明 */
+  --font-stat-number: 32px;            /* 手机统计数字 */
+  --font-stat-label: 14px;             /* 手机统计标签 */
+  --font-selected-label: 15px;         /* 手机精选论文标签 */
+  --font-paper-year: 15px;             /* 手机论文年份 */
+  --font-paper-number: 13px;           /* 手机论文编号 */
+  --font-publication-toggle: 23px;     /* 手机论文折叠栏 */
+  --font-publication-toggle-count: 15px; /* 手机论文折叠栏数量 */
+  --font-under-review: 16px;           /* 手机在审稿件正文 */
+  --font-under-review-status: 15px;    /* 手机在审稿件提交信息 */
+  --font-filter: 15px;                 /* 手机搜索与筛选 */
+  --font-source-note: 13px;            /* 手机来源说明 */
+  --font-news-date: 15px;              /* 手机新闻日期 */
+  --font-news-toggle: 16px;            /* 手机历史新闻展开按钮 */
+  --font-contact-title: 36px;          /* 手机联系区标题 */
+  --font-email: 21px;                  /* 手机邮箱 */
+  --font-address: 16px;                /* 手机单位地址 */
+  --font-footer: 12px;                 /* 手机页脚 */
+
+  --page-gutter: 6%;
+  --hero-top: 35px;
+  --hero-bottom: 45px;
+  --hero-gap: 40px;
+  --section-space: 45px;
+  --portrait-height: 380px;
+  --font-brand: 21px; /* 左上角英文姓名字号 */
+  --font-brand-zh: 17px; /* 左上角中文姓名字号 */
+  --font-nav: 16px; /* Research / Publications / News / Contact 导航字号 */
+  --font-hero: 49px; /* 首屏 Small particles. Connected worlds. 大标题字号 */
+  --font-section: 35px; /* Research / Publications / News 板块大标题字号 */
+  --font-story-heading: 35px; /* 三个详细研究介绍的标题字号 */
+  --font-intro: 17px; /* 首屏 I am... 简介正文字号 */
+  --font-research-body: 18px; /* 三个详细研究介绍的正文字号 */
+  --font-biography: 17px; /* 展开 Read full biography 后的正文字号 */
+  --font-paper-title: 20px; /* 论文题目字号 */
+  --font-paper-authors: 15px; /* 论文完整作者列表字号 */
+  --font-paper-journal: 15px; /* 期刊名、卷期、页码字号 */
+  --font-news: 17px; /* News 正文字号 */
+  --font-eyebrow: 14px; /* 板块上方小标签字号，例如 03 / NEWS & ACADEMIC SERVICE */
+ }
+ header {gap:8px}
+ nav {gap:20px;flex-wrap:wrap}
+ .hero,.story,.story.reverse {grid-template-columns:minmax(0,1fr)}
+ .story {gap:30px}
+ .news-row {grid-template-columns:minmax(0,1fr);gap:9px}
+}
+@media(max-width:370px) {
+ :root {--font-brand:20px;--font-nav:15px;--font-hero:43px}
+ nav {gap:15px}
+}
+
+/* 桌面分屏布局：一屏 = 浏览器可视高度减去顶部导航的实际高度。
+   不锁定高度、不隐藏溢出：展开简介或论文列表时自动向下延伸。
+   手机仍使用自然内容高度。 */
+:root {
+ --screen-padding-y: clamp(24px, 4vh, 48px); /* 每屏上下留白 */
+ --screen-header-height: 64px; /* 自动测量导航高度，一般无需手改 */
+ --screen-footer-height: 68px; /* 自动测量页脚高度，一般无需手改 */
+ --screen-height: calc(100svh - var(--screen-header-height)); /* 一屏的内容高度 */
+}
+@media(min-width:1000px) {
+ html {scroll-padding-top:var(--screen-header-height)}
+ /* 首页颜色边界位于第一屏底部，内容在屏内居中。 */
+ .hero {min-height:var(--screen-height);padding-top:var(--screen-padding-y);padding-bottom:var(--screen-padding-y)}
+ .hero:has(.bio[open]) {height:auto}
+ /* 研究、论文和新闻按实际内容高度排版，不再撑满一屏。 */
+ .research,.overview,.story,.publications,.news {min-height:0}
+ .research,.publications,.news {display:flex;flex-direction:column;justify-content:center}
+ .research>.wrap,.publications>.wrap,.news>.wrap {width:100%}
+ .overview {display:flex;flex-direction:column;justify-content:center}
+ /* 矮屏中给总览标签和图注留出空间，整张图片等比显示、不裁切。 */
+ #overview-image {max-height:calc(var(--screen-height) - 240px)}
+ .stories {padding-bottom:0}
+ .stories .schematic-note {margin:0;padding:12px 0}
+ /* 联系区与版权页脚共同组成最后一屏，避免页脚另占一小截。 */
+ .contact {min-height:calc(var(--screen-height) - var(--screen-footer-height));display:flex;flex-direction:column;justify-content:center;padding-top:var(--screen-padding-y);padding-bottom:var(--screen-padding-y)}
+ .contact .email {align-self:flex-start}
+}
+/* 较矮的桌面窗口：收紧段落留白，不改变用户设定的正文字号。 */
+@media(min-width:1000px) and (max-height:800px) {
+ :root {--screen-padding-y:14px}
+ .hero .eyebrow {margin-bottom:16px}
+ .hero h1 {margin-bottom:16px}
+ .hero .lead {margin-bottom:16px}
+ .hero .intro {margin-bottom:12px}
+ .hero .actions {margin:18px 0}
+ .hero .profile {padding-top:0}
+ .hero .affiliation {margin-top:24px}
+}
+
+
+/* 桌面紧凑排版：以下变量分别控制 Research、Publications 和 News。
+   只减少留白，不设置固定高度、不裁切内容。首页与 Contact 仍按整屏排布。 */
+:root {
+ --research-space-y: 38px;       /* Research 三列概览区的上下留白，各 38px */
+ --research-heading-gap: 24px;  /* 概览标题与三列卡片之间的距离 */
+ --overview-space-y: 22px;      /* Research overview 图片板块上下留白 */
+ --detail-space-y: 26px;        /* 每个详细研究方向的上下留白，各 26px */
+ --detail-screen-share: 0.5;    /* 每个研究方向至少占半屏；内容较长时自然增高 */
+ --detail-visual-height: 250px; /* 详细研究方向示意图最小高度 */
+ --detail-heading-gap: 12px;    /* 详细研究方向标题与正文之间的距离 */
+ --detail-line-height: 1.55;    /* 详细研究方向正文行距；不改变字号 */
+ --publication-space-y: 34px;   /* Publications 板块上下留白 */
+ --publication-heading-gap: 20px; /* 论文区标题下留白 */
+ --publication-row-space: 18px; /* 每篇论文上下留白 */
+ --publication-toggle-space: 16px; /* 论文折叠栏上下留白 */
+ --news-space-y: 28px;          /* News 板块上下留白 */
+ --news-heading-gap: 16px;      /* News 标题与新闻列表间距 */
+ --news-row-space: 10px;        /* 每条 News 上下留白，调小可容纳更多新闻 */
+ --news-line-height: 1.45;      /* News 正文行距 */
+ --news-toggle-space: 12px;     /* 历史新闻折叠按钮上下留白 */
+}
+@media(min-width:1000px) {
+ .research {padding-block:var(--research-space-y)}
+ .research .section-head {margin-bottom:var(--research-heading-gap)}
+ .research-grid h3 {margin-top:22px;margin-bottom:14px}
+ .overview {padding-block:var(--overview-space-y)}
+ .story {min-height:calc(var(--screen-height) * var(--detail-screen-share));padding-block:var(--detail-space-y)}
+ .story-visual {min-height:var(--detail-visual-height)}
+ .story .eyebrow {margin-bottom:12px}
+ .story h2 {margin-bottom:var(--detail-heading-gap)}
+ .story>div:last-child>p:not(.eyebrow) {line-height:var(--detail-line-height);margin-bottom:12px}
+ .story .status {margin-block:10px}
+ .story .text-link {margin-top:8px}
+ .publications {padding-block:var(--publication-space-y)}
+ .publications .section-head {margin-bottom:var(--publication-heading-gap)}
+ .stats {padding-block:18px;margin-bottom:24px}
+ .paper {padding-block:var(--publication-row-space)}
+ .under-review,.complete {margin-top:22px}
+ .complete>summary,.under-review>summary {padding-block:var(--publication-toggle-space)}
+ .source-note {margin-top:16px;margin-bottom:0}
+ .news {padding-block:var(--news-space-y)}
+ .news .section-head {margin-bottom:var(--news-heading-gap);gap:6px}
+ .news .section-head h2 {margin-bottom:0}
+ .news-row {padding-block:var(--news-row-space)}
+ .news-row p {line-height:var(--news-line-height)}
+ .earlier-news {margin-top:4px}
+ .earlier-news>summary {padding-block:var(--news-toggle-space)}
+}
+/* 较矮桌面窗口进一步收紧新闻行间距，保持 8 条可读，不缩小字号。 */
+@media(min-width:1000px) and (max-height:800px) {
+ :root {--news-row-space:6px;--news-space-y:24px}
+}

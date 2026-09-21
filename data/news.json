@@ -1,0 +1,73 @@
+[
+  {
+    "id": "houston-2026",
+    "date": "2026-05",
+    "displayDate": "",
+    "yearHint": 2026,
+    "text": "Coordinating Texas AQS ground-site measurements during the 2026 NOAA Houston field campaign, including online CIMS-Orbitrap characterization of gas-phase pollutants."
+  },
+  {
+    "id": "bims-september",
+    "date": "2025-09",
+    "displayDate": "SEP 2025",
+    "text": "Guest speaker for BIMS 110: One Health in Action at Texas A&M University."
+  },
+  {
+    "id": "aaar-2025",
+    "date": "2025-10",
+    "displayDate": "",
+    "yearHint": 2025,
+    "text": "Presented real-time particle-phase PFAS detection at the 2025 AAAR Annual Meeting in Buffalo, chaired the Source Apportionment 4 session, and received an Early Career Researchers Travel Grant."
+  },
+  {
+    "id": "ams-training",
+    "date": "2025-03",
+    "displayDate": "MAR 2025",
+    "text": "Coordinated aerosol mass spectrometer operation and data-analysis training at the Center for Atmospheric Chemistry and the Environment, Texas A&M University."
+  },
+  {
+    "id": "bims-january",
+    "date": "2025-01",
+    "displayDate": "JAN 2025",
+    "text": "Guest speaker for BIMS 110: One Health in Action at Texas A&M University."
+  },
+  {
+    "id": "tamu",
+    "date": "2024-11",
+    "displayDate": "NOV 2024",
+    "text": "Joined Texas A&M University as a Postdoctoral Research Associate in Atmospheric Sciences."
+  },
+  {
+    "id": "phd",
+    "date": "2024-07",
+    "displayDate": "JUL 2024",
+    "text": "Completed my Ph.D. in Environmental Science at Peking University."
+  },
+  {
+    "id": "recognition-2022",
+    "date": "2022-09",
+    "displayDate": "",
+    "yearHint": 2022,
+    "text": "Received the Peking University President’s Scholarship for Doctoral Students and the Challenge Cup May Fourth Youth Science Award, Grand Prize, in 2022."
+  },
+  {
+    "id": "teaching-certification",
+    "date": "2022-04",
+    "displayDate": "APR 2022",
+    "text": "Completed teaching assistant certification at Peking University with qualified standing."
+  },
+  {
+    "id": "technical-instruction",
+    "date": "",
+    "displayDate": "",
+    "yearHint": "2020 to 2021",
+    "text": "Served as a technical instructor for the Environmental Monitoring Experiment Course at Peking University, teaching offline aerosol sampling and instrumentation in 2020 and 2021."
+  },
+  {
+    "id": "graduate-ta",
+    "date": "2019-09",
+    "endDate": "2020-01",
+    "displayDate": "SEP 2019 to JAN 2020",
+    "text": "Teaching assistant for the graduate course Atmospheric Measurement Principles, Techniques, and Applications at Peking University."
+  }
+]

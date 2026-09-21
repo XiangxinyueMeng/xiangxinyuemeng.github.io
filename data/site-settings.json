@@ -1,0 +1,4 @@
+{
+  "_说明": "visibleNewsCount 表示默认展开的 News 数量，剩余记录放入折叠区。",
+  "visibleNewsCount": 8
+}
